@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIVU VIỆT NAM – Cổng thông tin du lịch toàn diện</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-image: url('vietnam-header.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: white;
+      padding: 100px 50px;
+      text-align: center;
+    }
+
+    header h1, header p {
+      color: #f3f1f1;
+      position: relative;
+      z-index: 1;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    nav {
+      background-color: #2c3e50;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .destination {
+      background-color: white;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    .destination img {
+      width: 90%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .destination h3 {
+      margin: 10px 20px 5px;
+      color: #333;
+    }
+
+    .destination p {
+      margin: 0 20px 20px;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>VIVU VIỆT NAM</h1>
+    <p>Cổng thông tin & hỗ trợ du lịch Việt Nam toàn diện</p>
+  </header>
+
+  <!-- ✅ Menu điều hướng -->
+  <nav>
+    <ul>
+      <li><a href="#home">Trang chủ</a></li>
+      <li><a href="#places">Khám phá</a></li>
+      <li><a href="#plan">Lên lịch trình</a></li>
+      <li><a href="#booking">Đặt phòng</a></li>
+      <li><a href="#reviews">Chia sẻ</a></li>
+      <li><a href="#events">Lễ hội</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="destination">
+      <h3>Hội An - Quảng Nam</h3>
+      <img src="hoi-an.jpg" alt="Hội An" />
+      <p>Hội An là phố cổ nổi tiếng với những ngôi nhà mái ngói vàng và lồng đèn đầy sắc màu. Đây là điểm đến lý tưởng cho du khách muốn tìm hiểu văn hóa và kiến trúc truyền thống Việt Nam.</p>
+    </div>
+
+    <div class="destination">
+      <h3>Đà Lạt - Lâm Đồng</h3>
+      <img src="da-lat.jpg" alt="Đà Lạt" />
+      <p>Thành phố sương mù với khí hậu mát mẻ quanh năm, nổi tiếng với rừng thông, thung lũng tình yêu và các trang trại hoa.</p>
+    </div>
+
+    <div class="destination">
+      <h3>Sa Pa - Lào Cai</h3>
+      <img src="sapa.jpg" alt="Sa Pa" />
+      <p>Sa Pa là thiên đường dành cho người yêu thích khám phá thiên nhiên, văn hóa dân tộc và ruộng bậc thang tuyệt đẹp.</p>
+    </div>
+
+    <div class="destination">
+      <h3>Vịnh Hạ Long - Quảng Ninh</h3>
+      <img src="ha-long.jpg" alt="Vịnh Hạ Long" />
+      <p>Di sản thiên nhiên thế giới với hàng nghìn đảo đá vôi và hang động kỳ vĩ, nơi lý tưởng để du ngoạn bằng thuyền và thưởng ngoạn hoàng hôn.</p>
+    </div>
+
+    <div class="destination">
+      <h3>Cần Thơ - Miền Tây sông nước</h3>
+      <img src="can-tho.jpg" alt="Cần Thơ" />
+      <p>Nổi tiếng với chợ nổi Cái Răng, miệt vườn và văn hóa sông nước đặc trưng miền Tây Nam Bộ.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - VIVU VIỆT NAM</p>
+  </footer>
+
+</body>
+</html>
