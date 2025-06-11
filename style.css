@@ -189,15 +189,16 @@
   .destination h3 {
     margin: 15px 0 10px;
     font-size: 1.8rem;
-    color: var(--primary-color);
+    color: #0d3b66; /* Màu xanh đậm dễ nhìn hơn */
     font-weight: 700;
   }
   
   .destination p {
     padding: 0 15px 20px;
     font-size: 1.1rem;
-    color: #555;
+    color: #444; /* Màu xám vừa phải dễ đọc */
   }
+  
   
   footer {
     text-align: center;
