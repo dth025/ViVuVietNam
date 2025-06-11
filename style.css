@@ -1,0 +1,146 @@
+:root {
+  --mau-xanh-ngoc: #2e8b57;
+  --mau-nau-dat: #8b5e3c;
+  --mau-vang-sen: #f5c242;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f8f5;
+  color: #333;
+}
+
+header {
+  background-image: url('vietnam-header.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 100px 50px;
+  text-align: center;
+  color: white;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+header h1, header p {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-toggle {
+  display: none;
+  background-color: var(--mau-xanh-ngoc);
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+nav {
+  background-color: var(--mau-xanh-ngoc);
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: var(--mau-vang-sen);
+}
+
+main {
+  padding: 20px;
+}
+
+.destination {
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.destination.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.destination:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.destination img {
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: var(--mau-nau-dat);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  #mainMenu {
+    display: none;
+  }
+
+  #mainMenu.active {
+    display: block;
+  }
+
+  #mainMenu ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  #mainMenu ul li {
+    display: block;
+    margin: 10px 0;
+  }
+}
