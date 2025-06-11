@@ -11,7 +11,11 @@
   <header class="site-header">
     <h1>VIVU VIỆT NAM</h1>
     <p class="tagline">Cổng thông tin & hỗ trợ du lịch Việt Nam toàn diện</p>
-    <input type="text" placeholder="Tìm địa điểm..." class="search-box">
+    <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Tìm địa điểm..." onkeyup="searchDestinations()" />
+      </div>
+      
   </header>
   <nav class="main-nav">
     <ul class="menu">
