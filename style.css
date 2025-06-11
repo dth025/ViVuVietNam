@@ -17,7 +17,7 @@ header {
   background-size: cover;
   background-position: center;
   position: relative;
-  padding: 100px 50px;
+  padding: 100px 50px 140px;
   text-align: center;
   color: white;
 }
@@ -48,6 +48,39 @@ header h1, header p {
   top: 10px;
   left: 10px;
   z-index: 2;
+}
+
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 280px;
+  max-width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  background-color: var(--mau-vang-sen);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-bar button:hover {
+  background-color: #e0a92f;
 }
 
 nav {
@@ -143,4 +176,37 @@ footer {
     display: block;
     margin: 10px 0;
   }
+ .search-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.search-bar input {
+  padding: 10px 40px 10px 40px;
+  width: 280px;
+  max-width: 80%;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.search-bar input::placeholder {
+  color: #eee;
+}
+
+.search-bar .search-icon {
+  position: absolute;
+  left: 15px;
+  color: white;
+  font-size: 18px;
+  pointer-events: none;
+}
+ 
 }
