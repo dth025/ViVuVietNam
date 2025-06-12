@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hà Giang - VIVU VIỆT NAM</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i> MENU
+    </button>
+    <h1>Hà Giang - Cực Bắc Tổ quốc</h1>
+    <p>Khám phá cao nguyên đá Đồng Văn, cột cờ Lũng Cú và văn hóa vùng cao</p>
+
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" id="searchInput" placeholder="Tìm địa điểm..." onkeyup="searchDestinations()" />
+    </div>
+  </header>
+
+  <nav id="mainMenu">
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+      <li><a href="khampha.html"><i class="fas fa-map-marked-alt"></i> Khám phá</a></li>
+      <li><a href="lichtrinh.html"><i class="fas fa-route"></i> Lên lịch trình</a></li>
+      <li><a href="datphong.html"><i class="fas fa-bed"></i> Đặt phòng</a></li>
+      <li><a href="chiase.html"><i class="fas fa-comment-dots"></i> Chia sẻ</a></li>
+      <li><a href="lehoi.html"><i class="fas fa-calendar-alt"></i> Lễ hội</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="destination-detail">
+      <img src="ha-giang.jpg" alt="Hà Giang" class="banner-img" />
+      <h2>Về Hà Giang</h2>
+      <p>Hà Giang nằm ở cực Bắc của Việt Nam, nổi bật với cao nguyên đá Đồng Văn hùng vĩ, những con đèo hiểm trở như Mã Pì Lèng, và cột cờ Lũng Cú thiêng liêng nơi địa đầu Tổ quốc.</p>
+      <p>Nơi đây không chỉ quyến rũ bởi cảnh sắc thiên nhiên, mà còn là vùng đất của nhiều dân tộc thiểu số với văn hóa đa dạng và lễ hội độc đáo.</p>
+    </section>
+
+    <section class="highlights">
+      <h2>Điểm nổi bật</h2>
+      <ul>
+        <li><strong>Cao nguyên đá Đồng Văn</strong> – Di sản địa chất toàn cầu.</li>
+        <li><strong>Đèo Mã Pì Lèng</strong> – Một trong tứ đại đỉnh đèo Việt Nam.</li>
+        <li><strong>Cột cờ Lũng Cú</strong> – Nơi đặt nét cờ Tổ quốc trên cực Bắc.</li>
+        <li><strong>Chợ phiên vùng cao</strong> – Trải nghiệm văn hóa bản địa.</li>
+      </ul>
+    </section>
+
+    <section class="tips">
+      <h2>Gợi ý lịch trình</h2>
+      <p>Khám phá Hà Giang trong 3 đến 5 ngày: Hà Giang – Quản Bạ – Yên Minh – Đồng Văn – Mã Pì Lèng – Mèo Vạc.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - VIVU VIỆT NAM</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
