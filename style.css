@@ -262,4 +262,15 @@
       transform: translateY(0);
     }
   }
+/* Link bọc địa danh */
+.destination-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.destination-link:hover {
+  transform: scale(1.02);
+}
   
