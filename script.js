@@ -88,4 +88,18 @@ function toggleMenu() {
   window.addEventListener("load", () => {
     document.querySelectorAll(".destination").forEach(el => el.classList.add("visible"));
   });
-  
+  function searchDestinations() {
+  const input = document.getElementById('searchInput');
+  const filter = input.value.toLowerCase();
+
+  const cards = document.querySelectorAll('.destination-card, .destination-link');
+
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    if (text.includes(filter)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
