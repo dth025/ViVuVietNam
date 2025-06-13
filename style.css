@@ -273,4 +273,91 @@
 .destination-link:hover {
   transform: scale(1.02);
 }
-  
+
+/* ========== GALLERY ========== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin: 40px auto;
+  padding: 0 15px;
+  justify-items: center;
+  max-width: 1200px;
+}
+
+.gallery figure {
+  background-color: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.gallery figure:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.gallery figcaption {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.destination-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px auto;
+  width: 80%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.destination-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.destination-card a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+
+.destination-card h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0a3871;
+  margin-bottom: 10px;
+}
+
+.destination-card p {
+  font-size: 16px;
+  color: #333;
+  text-align: justify;
+}
