@@ -2,21 +2,36 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chia sẻ - VIVU VIỆT NAM</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Font Awesome để hiển thị icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta charset="UTF-8">
   <title>Chia sẻ - VIVU VIỆT NAM</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
+<script src="script.js"></script>
 <body>
-  <header class="site-header">
+ <header class="site-header">
     <h1>VIVU VIỆT NAM</h1>
     <p class="tagline">Cổng thông tin & hỗ trợ du lịch Việt Nam toàn diện</p>
-    <input type="text" placeholder="Tìm địa điểm..." class="search-box">
+    <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Tìm địa điểm..." onkeyup="searchDestinations()" />
+      </div>
+      
   </header>
+
   <nav class="main-nav">
     <ul>
       <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
       <li><a href="khampha.html"><i class="fas fa-map-marked-alt"></i> Khám phá</a></li>
       <li><a href="lichtrinh.html"><i class="fas fa-route"></i> Lên lịch trình</a></li>
+      <li><a href="datphong.html"><i class="fas fa-bed"></i> Đặt phòng</a></li>
       <li><a href="chiase.html"><i class="fas fa-comment-dots"></i> Chia sẻ</a></li>
       <li><a href="lehoi.html"><i class="fas fa-calendar-alt"></i> Lễ hội</a></li>
     </ul>
