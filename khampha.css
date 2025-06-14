@@ -112,4 +112,10 @@ body {
     color: var(--primary-color);
     pointer-events: none;
   }
-  
+  .search-bar .search-icon {
+  position: absolute;
+  right: 20px;
+  font-size: 1.2rem;
+  color: #007bff; /* hoặc bất kỳ màu nào nổi bật */
+  pointer-events: none;
+}
