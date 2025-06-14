@@ -181,3 +181,10 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+main h2, main h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  color: #0d3b66;
+}

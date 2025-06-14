@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <meta charset="UTF-8">
   <title>Lễ hội - VIVU VIỆT NAM</title>
   <link rel="stylesheet" href="style.css">
@@ -10,8 +12,12 @@
   <header class="site-header">
     <h1>VIVU VIỆT NAM</h1>
     <p class="tagline">Cổng thông tin & hỗ trợ du lịch Việt Nam toàn diện</p>
-    <input type="text" placeholder="Tìm địa điểm..." class="search-box">
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" id="searchInput" placeholder="Tìm địa điểm..." onkeyup="searchDestinations()" />
+    </div>
   </header>
+
   <nav class="main-nav">
    <ul>
       <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
@@ -36,4 +42,4 @@
     <p>&copy; 2025 VIVU VIỆT NAM</p>
   </footer>
 </body>
-</html>
+</html><link rel="stylesheet" href="style.css">
