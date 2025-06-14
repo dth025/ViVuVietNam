@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <meta charset="UTF-8">
   <title>Khám phá - VIVU VIỆT NAM</title>
   <link rel="stylesheet" href="style.css"> <!-- Dùng chung -->
@@ -158,4 +160,27 @@
     <p>&copy; 2025 VIVU VIỆT NAM</p>
   </footer>
 </body>
-</html>
+</html><header>
+  <h1><i class="fas fa-map-marked-alt"></i> Khám phá Việt Nam</h1>
+</header>
+
+<div class="search-bar">
+  <i class="fas fa-search search-icon"></i>
+  <input type="text" id="searchInput" placeholder="Tìm địa điểm..." onkeyup="searchDestinations()" />
+</div>
+
+<div class="container">
+  <h2 class="title"><i class="fas fa-location-dot"></i> Địa điểm nổi bật</h2>
+
+  <div class="destination-grid">
+    <div class="destination-card">
+      <img src="images/hanoi.jpg" alt="Hà Nội">
+      <div class="info">
+        <h3><i class="fas fa-landmark"></i> Hà Nội</h3>
+        <p>Thủ đô nghìn năm văn hiến với Hồ Gươm, Văn Miếu và ẩm thực phong phú.</p>
+      </div>
+    </div>
+
+    <!-- Thêm các thẻ tương tự cho các địa điểm khác -->
+  </div>
+</div>
