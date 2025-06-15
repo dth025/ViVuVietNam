@@ -1,16 +1,46 @@
 # ViVuViệtNam – Cổng thông tin du lịch Việt Nam toàn diện
 
-**ViVuViệtNam** là dự án đồ án môn Kỹ Thuật Phần Mềm, với mục tiêu xây dựng một website hỗ trợ du lịch Việt Nam toàn diện, giúp người dùng khám phá, lên lịch trình, đặt phòng và chia sẻ trải nghiệm du lịch.
+**ViVuViệtNam** là dự án đồ án môn Kỹ Thuật Phần Mềm, với mục tiêu xây dựng một website hỗ trợ du lịch Việt Nam toàn diện, giúp người dùng khám phá, lên lịch trình và chia sẻ trải nghiệm du lịch.
 
-## 🚀 Giới thiệu
+**ViVu Việt Nam** là một nền tảng du lịch được xây dựng nhằm phục vụ nhu cầu du lịch trong nước ngày càng tăng cao, đặc biệt sau đại dịch. Dự án cung cấp các tính năng hỗ trợ người dùng trong việc:
 
-ViVuViệtNam cung cấp các tính năng chính:
+- Tìm kiếm địa điểm du lịch theo tỉnh/thành, vùng miền
+- Gợi ý lịch trình thông minh dựa trên số ngày và loại hình du lịch
+- Đặt phòng khách sạn gần địa điểm
+- Đăng bài viết, chia sẻ cảm nhận và đánh giá địa điểm
+- Theo dõi sự kiện/lễ hội địa phương
+- Học nhanh các câu nói địa phương cơ bản
 
-- **Khám phá**: Danh sách các địa điểm du lịch nổi bật tại Việt Nam.
-- **Lên lịch trình**: Gợi ý các hành trình khám phá 3 - 5 - 7 ngày tại các địa điểm nổi bật.
-- **Đặt phòng**: Hỗ trợ bạn đặt khách sạn, homestay, vé xe và tour du lịch.
-- **Chia sẻ**: Đọc đánh giá và chia sẻ trải nghiệm du lịch từ cộng đồng Vivu.
-- **Lễ hội**: Cập nhật thông tin lễ hội địa phương diễn ra trong năm.
+## 🛠️ Công nghệ sử dụng
+
+| Thành phần | Công nghệ                         |
+|------------|-----------------------------------|
+| Frontend   | React.js, HTML5, CSS3, JavaScript |
+| Backend    | Node.js, Express.js               |
+| Database   | MongoDB                           |
+| Bản đồ     | Google Maps API                   |
+| Thiết kế UI| Figma                             |
+| Kiểm thử   | Postman, Jest, Selenium (giả lập) |
+
+## 📂 Cấu trúc thư mục
+
+```bash
+ViVuVietNam/
+├── client/              # Frontend React
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       └── App.js
+├── server/              # Backend Node.js
+│   ├── models/
+│   ├── controllers/
+│   ├── routes/
+│   └── server.js
+├── database/
+│   └── seed.js          # Dữ liệu mẫu
+├── .env.example         # Mẫu biến môi trường
+└── README.md
 
 ## 👨‍💻 Thành viên nhóm
 
