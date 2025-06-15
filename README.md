@@ -8,10 +8,8 @@
 
 - Tìm kiếm địa điểm du lịch theo tỉnh/thành, vùng miền
 - Gợi ý lịch trình thông minh dựa trên số ngày và loại hình du lịch
-- Đặt phòng khách sạn gần địa điểm
 - Đăng bài viết, chia sẻ cảm nhận và đánh giá địa điểm
 - Theo dõi sự kiện/lễ hội địa phương
-- Học nhanh các câu nói địa phương cơ bản
 
 ## 🛠️ Công nghệ sử dụng
 
