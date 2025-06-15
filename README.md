@@ -1,6 +1,8 @@
-# ViVuViệtNam – Cổng thông tin du lịch Việt Nam toàn diện
+# 🌏 ViVuViệtNam – Cổng thông tin du lịch Việt Nam toàn diện
 
 **ViVuViệtNam** là dự án đồ án môn Kỹ Thuật Phần Mềm, với mục tiêu xây dựng một website hỗ trợ du lịch Việt Nam toàn diện, giúp người dùng khám phá, lên lịch trình và chia sẻ trải nghiệm du lịch.
+
+## 🚀 Giới thiệu
 
 **ViVu Việt Nam** là một nền tảng du lịch được xây dựng nhằm phục vụ nhu cầu du lịch trong nước ngày càng tăng cao, đặc biệt sau đại dịch. Dự án cung cấp các tính năng hỗ trợ người dùng trong việc:
 
@@ -41,6 +43,7 @@ ViVuVietNam/
 │   └── seed.js          # Dữ liệu mẫu
 ├── .env.example         # Mẫu biến môi trường
 └── README.md
+
 
 ## 👨‍💻 Thành viên nhóm
 
