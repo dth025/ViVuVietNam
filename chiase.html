@@ -2,48 +2,116 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chia sẻ - VIVU VIỆT NAM</title>
-<link rel="stylesheet" href="style.css">
-
-<!-- Font Awesome để hiển thị icon -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chia sẻ - VIVU VIỆT NAM</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="chiase.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Script -->
+  <script defer>
+    function openModal() {
+      document.getElementById('shareModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('shareModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('shareModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('shareForm');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const text = document.getElementById('shareText').value;
+        const image = document.getElementById('shareImage').files[0];
+
+        if (!text && !image) {
+          alert('Vui lòng nhập nội dung hoặc tải ảnh.');
+          return;
+        }
+
+        alert('Cảm ơn bạn đã chia sẻ! (Tính năng lưu sẽ cập nhật sau)');
+        closeModal();
+        form.reset();
+      });
+    });
+  </script>
 </head>
-<script src="script.js"></script>
 <body>
- <header class="site-header">
+  <!-- Header -->
+  <header class="site-header">
     <h1>VIVU VIỆT NAM</h1>
     <p class="tagline">Cổng thông tin & hỗ trợ du lịch Việt Nam toàn diện</p>
+
     <div class="search-bar">
-        <i class="fas fa-search search-icon"></i>
-        <input type="text" id="searchInput" placeholder="Tìm địa điểm..." onkeyup="searchDestinations()" />
-      </div>
-      
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" id="searchInput" placeholder="Tìm địa điểm..." onkeyup="searchDestinations()" />
+    </div>
   </header>
 
+  <!-- Nav -->
   <nav class="main-nav">
     <ul>
       <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
       <li><a href="khampha.html"><i class="fas fa-map-marked-alt"></i> Khám phá</a></li>
       <li><a href="lichtrinh.html"><i class="fas fa-route"></i> Lên lịch trình</a></li>
-      <li><a href="chiase.html"><i class="fas fa-comment-dots"></i> Chia sẻ</a></li>
+      <li><a href="chiase.html" class="active"><i class="fas fa-comment-dots"></i> Chia sẻ</a></li>
       <li><a href="lehoi.html"><i class="fas fa-calendar-alt"></i> Lễ hội</a></li>
     </ul>
   </nav>
+
+  <!-- Main -->
   <main>
-    <section>
-      <h2>Chia sẻ trải nghiệm</h2>
-      <p>Đăng tải những hành trình, hình ảnh, câu chuyện du lịch đáng nhớ của bạn.</p>
-      <button onclick="alert('Tính năng chia sẻ sẽ sớm ra mắt')">Chia sẻ ngay</button>
-    </section>
+    <div class="container">
+      <section class="share-section">
+        <h2>Chia sẻ trải nghiệm</h2>
+        <p>Hãy cùng cộng đồng ViVu chia sẻ những hành trình, hình ảnh và câu chuyện du lịch đáng nhớ của bạn.</p>
+        
+        <button class="share-button" onclick="openModal()">
+          <i class="fas fa-upload"></i> Chia sẻ ngay
+        </button>
+      </section>
+    </div>
+
+    <!-- Modal -->
+<div id="shareModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3><i class="fas fa-pen"></i> Chia sẻ hành trình của bạn</h3>
+
+    <form id="shareForm">
+      <div class="form-group">
+        <label for="shareText">Nội dung</label>
+        <textarea id="shareText" placeholder="Kể lại chuyến đi, cảm xúc của bạn..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="shareImage">Ảnh kèm theo</label>
+        <input type="file" id="shareImage" accept="image/*" onchange="previewImage(event)">
+        <div id="imagePreview" class="image-preview hidden"></div>
+      </div>
+
+      <button type="submit"><i class="fas fa-paper-plane"></i> Đăng bài</button>
+    </form>
+  </div>
+</div>
+
   </main>
-  <footer>
-    <p>&copy; 2025 VIVU VIỆT NAM</p>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 VIVU VIỆT NAM. Giữ bản quyền nội dung.</p>
   </footer>
 </body>
 </html>
