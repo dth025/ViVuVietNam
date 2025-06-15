@@ -103,3 +103,34 @@ function toggleMenu() {
     }
   });
 }
+function filterRegion(region) {
+  const festivals = document.querySelectorAll('.festival-item');
+  festivals.forEach(item => {
+    if (region === 'all') {
+      item.style.display = 'block';
+    } else {
+      if (item.classList.contains(region)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    }
+  });
+}
+function previewImage(event) {
+  const file = event.target.files[0];
+  const preview = document.getElementById('imagePreview');
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      preview.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+      preview.classList.remove('hidden');
+    };
+    reader.readAsDataURL(file);
+  } else {
+    preview.innerHTML = '';
+    preview.classList.add('hidden');
+  }
+}
+
