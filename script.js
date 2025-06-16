@@ -134,3 +134,22 @@ function previewImage(event) {
   }
 }
 
+// Tạo bài viết mới
+const postContainer = document.getElementById('postsContainer');
+const newPost = document.createElement('div');
+newPost.className = 'shared-post';
+newPost.innerHTML = `<p>${text}</p>`;
+
+if (image) {
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const img = document.createElement('img');
+    img.src = e.target.result;
+    newPost.appendChild(img);
+    postContainer.prepend(newPost);
+  };
+  reader.readAsDataURL(image);
+} else {
+  postContainer.prepend(newPost);
+}
+

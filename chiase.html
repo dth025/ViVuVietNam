@@ -13,40 +13,106 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Script -->
-  <script defer>
-    function openModal() {
-      document.getElementById('shareModal').style.display = 'block';
-    }
+ <script defer>
+  function openModal() {
+    document.getElementById('shareModal').style.display = 'block';
+  }
 
-    function closeModal() {
-      document.getElementById('shareModal').style.display = 'none';
-    }
+  function closeModal() {
+    document.getElementById('shareModal').style.display = 'none';
+    document.getElementById('imagePreview').innerHTML = '';
+    document.getElementById('imagePreview').classList.add('hidden');
+  }
 
-    window.onclick = function(event) {
-      const modal = document.getElementById('shareModal');
-      if (event.target == modal) {
-        modal.style.display = 'none';
+  function previewImage(event) {
+    const file = event.target.files[0];
+    const preview = document.getElementById('imagePreview');
+    preview.innerHTML = '';
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        preview.innerHTML = `<img src="${e.target.result}" alt="preview">`;
+        preview.classList.remove('hidden');
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  // Tải các bài chia sẻ từ LocalStorage
+  function loadPosts() {
+    const postsContainer = document.getElementById('postsContainer');
+    postsContainer.innerHTML = '';
+
+    const savedPosts = JSON.parse(localStorage.getItem('vivuPosts') || '[]');
+    savedPosts.reverse().forEach(postData => {
+      const post = document.createElement('div');
+      post.className = 'shared-post';
+
+      if (postData.text) {
+        const textElement = document.createElement('p');
+        textElement.textContent = postData.text;
+        post.appendChild(textElement);
       }
-    }
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById('shareForm');
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const text = document.getElementById('shareText').value;
-        const image = document.getElementById('shareImage').files[0];
+      if (postData.image) {
+        const img = document.createElement('img');
+        img.src = postData.image;
+        img.alt = "Hình chia sẻ";
+        img.style.maxWidth = '100%';
+        img.style.marginTop = '12px';
+        post.appendChild(img);
+      }
 
-        if (!text && !image) {
-          alert('Vui lòng nhập nội dung hoặc tải ảnh.');
-          return;
-        }
-
-        alert('Cảm ơn bạn đã chia sẻ! (Tính năng lưu sẽ cập nhật sau)');
-        closeModal();
-        form.reset();
-      });
+      postsContainer.appendChild(post);
     });
-  </script>
+  }
+
+  // Khi DOM đã sẵn sàng
+  document.addEventListener('DOMContentLoaded', function () {
+    loadPosts();
+
+    const form = document.getElementById('shareForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const text = document.getElementById('shareText').value;
+      const imageFile = document.getElementById('shareImage').files[0];
+
+      if (!text && !imageFile) {
+        alert('Vui lòng nhập nội dung hoặc tải ảnh.');
+        return;
+      }
+
+      const newPost = { text: text, image: null };
+
+      if (imageFile) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          newPost.image = e.target.result;
+
+          saveAndRenderPost(newPost);
+        };
+        reader.readAsDataURL(imageFile);
+      } else {
+        saveAndRenderPost(newPost);
+      }
+
+      alert('Cảm ơn bạn đã chia sẻ!');
+      closeModal();
+      form.reset();
+    });
+  });
+
+  function saveAndRenderPost(postData) {
+    // Lưu vào localStorage
+    const savedPosts = JSON.parse(localStorage.getItem('vivuPosts') || '[]');
+    savedPosts.push(postData);
+    localStorage.setItem('vivuPosts', JSON.stringify(savedPosts));
+
+    // Cập nhật hiển thị
+    loadPosts();
+  }
+</script>
+
 </head>
 <body>
   <!-- Header -->
@@ -77,11 +143,15 @@
       <section class="share-section">
         <h2>Chia sẻ trải nghiệm</h2>
         <p>Hãy cùng cộng đồng ViVu chia sẻ những hành trình, hình ảnh và câu chuyện du lịch đáng nhớ của bạn.</p>
-        
-        <button class="share-button" onclick="openModal()">
+                <button class="share-button" onclick="openModal()">
           <i class="fas fa-upload"></i> Chia sẻ ngay
         </button>
       </section>
+      <section class="shared-posts">
+  <h3>Bài chia sẻ gần đây</h3>
+  <div id="postsContainer"></div>
+</section>
+
     </div>
 
     <!-- Modal -->
