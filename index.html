@@ -11,8 +11,28 @@
     – Cổng thông tin du lịch toàn diện</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+function searchDestinations() {
+  const input = document.getElementById('searchInput');
+  const filter = input.value.toLowerCase();
+  const cards = document.querySelectorAll('.destination-card');
+
+  cards.forEach(card => {
+    const title = card.querySelector('h2').textContent.toLowerCase();
+    const description = card.querySelector('p').textContent.toLowerCase();
+
+    if (title.includes(filter) || description.includes(filter)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+
 </head>
 <body>
+  
 
   <header>
     <button class="menu-toggle" onclick="toggleMenu()">
@@ -173,3 +193,8 @@
     <p>Vùng đất hùng vĩ với cao nguyên đá Đồng Văn, cột cờ Lũng Cú và những cung đường đèo ấn tượng.</p>
   </a>
 </div>
+
+<footer class="site-footer">
+  <p>&copy; 2025 VIVU VIỆT NAM</p>
+</footer>
+
